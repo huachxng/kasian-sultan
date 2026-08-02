@@ -1,0 +1,16 @@
+{
+  "tax_year": 2026, "be_year": 2569,
+  "verified_on": "2026-08-01", "review_by": "2027-01-31",
+  "sources": [
+    "https://www.rd.go.th/english/6045.html",
+    "https://www.rd.go.th/5937.html",
+    "https://sherrings.com/esg-mutual-fund-tax-incentive-thailand.html"
+  ],
+  "events": [
+    { "id": "pnd94",      "date": "2026-09-30", "kind": "statutory", "locale_key": "cal.pnd94",  "note_key": "cal.pnd94Note" },
+    { "id": "fundCutoff", "date": "2026-12-28", "kind": "info",      "locale_key": "cal.cutoff", "note_key": "cal.cutoffNote" },
+    { "id": "esgSunset",  "date": "2026-12-31", "kind": "sunset",    "locale_key": "cal.esg",    "note_key": "cal.esgNote" },
+    { "id": "tavi50",     "date": "2027-02-15", "kind": "statutory", "locale_key": "cal.tavi",   "note_key": "cal.taviNote" },
+    { "id": "filing",     "date": "2027-03-31", "kind": "statutory", "locale_key": "cal.filing", "note_key": "cal.filingNote" }
+  ]
+}
