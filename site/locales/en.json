@@ -1,0 +1,223 @@
+{
+  "chrome": {
+    "wordmark": "KASIAN SULTAN",
+    "tagline": "Retire like a sultan",
+    "footerDisclaimer": "Educational only — not financial advice.",
+    "langToggle": "ไทย",
+    "chapterIndex": "Chapters",
+    "stale": "These figures were last verified {date}. Tax rules change — confirm at rd.go.th.",
+    "nojs": "This chapter's calculator needs JavaScript. Everything written here still reads without it."
+  },
+  "disclaimer": {
+    "title": "What this site is — and is not",
+    "full": "Kasian Sultan is a free educational project. It is not investment, tax, or legal advice, and no part of it is a recommendation to buy or sell any fund, security, or product. It is not operated by a licensed securities professional, financial advisor, or tax preparer, and is not affiliated with any financial institution or government agency. The calculators are illustrations driven entirely by assumptions you choose; projections are mathematical scenarios, not predictions or guarantees — real markets rise, fall, and misbehave, and past or assumed returns do not determine future results. Tax rules shown are for tax year 2026 (B.E. 2569), verified against the sources listed below on the date shown, and change often — confirm current rules with the Revenue Department (rd.go.th) before acting. Before making investment, tax, or retirement decisions, consult a licensed professional: an SEC-licensed investment advisor for investments, or a qualified tax advisor for your filing. Nothing you enter here is collected, stored, or transmitted — all calculations run and remain in your browser (your language choice is saved on your own device only)."
+  },
+  "hero": {
+    "title": "Kasian Sultan",
+    "sub": "A free guide to retiring in Thailand — the maths, the tax, the dates that matter.",
+    "privacy": "Nothing you type leaves this page",
+    "scroll": "Scroll"
+  },
+  "time": {
+    "kicker": "Chapter one",
+    "title": "Time is the asset.",
+    "lede": "Not your salary. Not your stock picks. The years you leave money alone are the part nobody can buy back later.",
+    "ageLabel": "Your age",
+    "yearsLeft": "years until 65",
+    "doublings": "times money invested today could double by 65 at 6% — the rule of 72, an illustration, not a promise",
+    "note": "The rule of 72: divide 72 by your return to estimate the years each doubling takes. At 6% that is roughly 12 years. It is a mental shortcut, not a forecast — real returns arrive unevenly, and some years are negative."
+  },
+  "number": {
+    "kicker": "Chapter two",
+    "title": "Your number.",
+    "lede": "Retirement is not an age. It is a pile of money large enough that what it produces covers what you spend.",
+    "essential": "Essential spending / month",
+    "discretionary": "Discretionary / month",
+    "guaranteed": "Guaranteed income / month",
+    "guaranteedNote": "SSO pension, rent you collect, a company pension — income that arrives whether or not your portfolio behaves.",
+    "target": "Portfolio that could fund the rest",
+    "range": "at a {low}–{high} starting withdrawal rate (research as of {date}) — assumptions, not magic",
+    "multiples": "That is {lowX}× to {highX}× your portfolio-funded yearly spending.",
+    "essNote": "Essentials are the floor that must be funded no matter what happens. Discretionary spending is where flexibility lives — people who can cut back in bad years can safely start at a higher rate than people who cannot."
+  },
+  "climb": {
+    "kicker": "Chapter three",
+    "title": "The climb.",
+    "monthly": "You invest / month",
+    "retire": "Retire at",
+    "scenario": "Scenario",
+    "bear": "Bear",
+    "base": "Base",
+    "bull": "Bull",
+    "putIn": "you put in",
+    "growth": "growth added",
+    "total": "projected total",
+    "band": "The shaded band is the middle 90% of 1,000 simulated futures — a range, not a promise. All figures are in today's baht, so you can read them with today's prices in mind.",
+    "seqTitle": "Order matters more than average",
+    "seq": "Take ten years of returns averaging exactly 5%, a ฿1,000,000 portfolio, and ฿50,000 withdrawn each year. Nothing changes except the order the returns arrive in:",
+    "seqBest": "good years first",
+    "seqFlat": "a flat 5% every year",
+    "seqWorst": "bad years first",
+    "seqNote": "Same returns. Same average. A 46% gap in what you are left with. This is sequence-of-returns risk, and it is why a single average return figure flatters a plan."
+  },
+  "rules": {
+    "kicker": "Chapter four",
+    "title": "The rules of the game.",
+    "lede": "Almost everyone misunderstands this one thing, and it costs them money and sleep.",
+    "income": "Your yearly income",
+    "marginal": "marginal rate — tax on your NEXT baht",
+    "effective": "effective rate — tax across ALL your baht",
+    "next1000": "tax on your next ฿1,000",
+    "myth": "Crossing into a higher bracket never taxes your whole income at the new rate — only the slice above the line. A raise cannot shrink your take-home pay.",
+    "modeTh": "Thailand {year}",
+    "modeDemo": "Demo country",
+    "modeLabel": "Rules",
+    "assume": "Assumes salaried income with the standard expense deduction and the personal allowance only — no spouse, children, or other deductions. An illustration, not your filing.",
+    "taxable": "taxable income after deductions",
+    "demoNote": "A made-up three-band country, so you can watch the mechanism without Thai numbers in the way. Every progressive tax system on earth works like this."
+  },
+  "cheats": {
+    "kicker": "Chapter five",
+    "title": "The cheat codes.",
+    "lede": "The legal ones. Thailand pays you to save for your own retirement — but only up to lines that most people have never seen drawn.",
+    "saved": "tax saved this year",
+    "ceilRet": "shared retirement ceiling — RMF + PVD + GPF + NSF + pension insurance",
+    "ceilIns": "life + health insurance group",
+    "capped": "capped",
+    "esgNote": "Thai ESG's enhanced ฿300,000 cap ends 31 December 2026 (B.E. 2569) unless it is extended. After that it is expected to revert to a smaller cap with a longer holding period.",
+    "pensionTrap": "Pension life insurance counts INSIDE the ฿500,000 retirement ceiling, not alongside it. This is the single most commonly misfiled deduction in Thailand.",
+    "note": "A simulator, not a filing. Caps depend on your income, and they change from tax year to tax year. Also inside the shared ceiling but not shown here: GPF and NSF. Confirm everything before you file.",
+    "rmf": "RMF — retirement mutual fund",
+    "thaiEsg": "Thai ESG fund",
+    "pvd": "Provident fund (through your employer)",
+    "pensionLife": "Pension life insurance",
+    "lifeIns": "Life insurance",
+    "healthIns": "Health insurance",
+    "parentsHealth": "Parents' health insurance",
+    "beforeAfter": "Your tax falls from {before} to {after}."
+  },
+  "cal": {
+    "kicker": "Chapter six",
+    "title": "The calendar.",
+    "lede": "Money decisions have deadlines. Miss the December one and a whole year of deductions is simply gone.",
+    "filing": "File PND 90 / 91 (tax year 2026)",
+    "filingNote": "Paper deadline 31 March 2027. An 8-day e-filing extension has been granted in recent years, but the current authorisation lapses 31 January 2027 — check rd.go.th each season rather than assuming it.",
+    "pnd94": "PND 94 half-year return",
+    "pnd94Note": "Only if you have rental, freelance, or other section 40(5)–(8) income earned January to June. Salary alone never triggers it.",
+    "cutoff": "Last fund-dealing days of December",
+    "cutoffNote": "RMF and Thai ESG purchases must settle within 2026 to count for 2026. The exact final dealing day varies by fund — buy by mid-December to be safe.",
+    "esg": "Thai ESG enhanced cap ends",
+    "esgNote": "The last day of the ฿300,000 enhanced deduction era, unless it is extended.",
+    "tavi": "Chase your 50 tawi",
+    "taviNote": "Your employer must issue the withholding tax certificate by 15 February. You cannot file accurately without it.",
+    "ics": "Add these to your calendar",
+    "mine": "Your milestones",
+    "minelede": "These move with the age you set in chapter one.",
+    "rmf55": "RMF unlocks",
+    "rmf55note": "From 55, and after holding at least five years, RMF can be redeemed without losing the tax relief.",
+    "nsf60": "NSF pension age",
+    "nsf60note": "The National Savings Fund starts paying its pension at 60.",
+    "exempt65": "฿190,000 income exemption",
+    "exempt65note": "From 65 you can exempt up to ฿190,000 of income before the standard expense deduction.",
+    "sso": "The SSO pension needs 180 months of contributions — fifteen years. At the 2026 wage ceiling that is about ฿3,500 a month from age 55, rising by 1.5 percentage points for each extra year you contribute. Below 180 months you get a lump sum instead. Check your months at sso.go.th.",
+    "ssoTitle": "The 180-month cliff"
+  },
+  "instruments": {
+    "kicker": "Chapter seven",
+    "title": "The instruments.",
+    "lede": "What you can actually buy in Thailand, what each one is for, and how each is taxed. No product names, no suggestions — just what the tools are.",
+    "riskLabel": "Risk",
+    "whatLabel": "What it is",
+    "liqLabel": "Getting your money out",
+    "taxLabel": "Tax",
+    "mixTitle": "How allocations usually shift with age",
+    "mix": "The textbook pattern is simple: the further you are from needing the money, the more of it tends to sit in growth assets, because you have time to ride out falls. In your twenties that usually means mostly growth assets. Around midlife it typically becomes a genuine mix. Near and into retirement it usually tilts towards stability and income, because a bad year hurts far more when you are selling rather than buying. These are illustrations of a common pattern, not a recommendation for you — your own mix depends on circumstances this page knows nothing about.",
+    "windfallTitle": "A lump sum is a different question",
+    "windfall": "Research on investing a windfall all at once versus spreading it out generally favours investing promptly — markets rise more often than they fall, so waiting usually costs you. Vanguard found lump-sum investing beat spreading it over three months about 68% of the time. That research is about a windfall: a bonus, an inheritance, a provident fund payout. It says nothing about investing your salary monthly, which is simply how salaries arrive — that is not a suboptimal strategy, it is your cash flow.",
+    "foreignTitle": "Money earned abroad",
+    "foreign": "If you are a Thai tax resident — 180 days or more in the country in a year — foreign income you earned from 2024 onward is taxable when you bring it into Thailand, in that year or any later one. Income earned before 2024 is not caught by this. A relaxation has been drafted but is not law as of August 2026. Foreign gains are taxed as ordinary income at up to 35% when remitted, while gains on Thai listed shares are exempt — a difference big enough to be worth professional advice if it applies to you.",
+    "cards": {
+      "savings": {
+        "name": "Savings account",
+        "what": "A bank deposit you can withdraw at any time. Not an investment — a place to keep the money you might need this month, and the emergency fund you hope not to touch.",
+        "risk": "Effectively none, aside from inflation quietly eroding what it buys.",
+        "liq": "Instant.",
+        "tax": "Interest is subject to 15% withholding tax, but savings-account interest up to ฿20,000 a year is exempt."
+      },
+      "deposit": {
+        "name": "Fixed deposit",
+        "what": "A bank deposit locked for a set term at a set rate. Slightly more interest in exchange for not touching it.",
+        "risk": "Very low. The rate is known in advance.",
+        "liq": "Locked for the term; breaking it early usually costs you the interest.",
+        "tax": "15% withholding tax on the interest. You may include it in your return instead and claim the tax back if your rate is lower."
+      },
+      "sso": {
+        "name": "Social Security (SSO)",
+        "what": "Not something you buy — if you are employed, you are already contributing. It pays an old-age pension, plus medical and unemployment cover along the way.",
+        "risk": "None to you; it is a state scheme.",
+        "liq": "Pension from 55 with at least 180 months of contributions. Fewer months means a lump sum instead.",
+        "tax": "Your contributions are deductible. Check your contribution months at sso.go.th."
+      },
+      "pvd": {
+        "name": "Provident fund (PVD)",
+        "what": "A retirement fund run through your employer, who usually contributes alongside you. The employer match is the closest thing to free money in this whole list.",
+        "risk": "Depends on the plan you choose inside it, from conservative to growth.",
+        "liq": "Tied to your employment and the fund's rules.",
+        "tax": "Contributions deductible up to 15% of wages, inside the shared ฿500,000 retirement ceiling."
+      },
+      "rmf": {
+        "name": "RMF — retirement mutual fund",
+        "what": "A mutual fund wrapper designed for retirement, with tax relief in exchange for genuinely leaving it alone. You choose what it invests in.",
+        "risk": "Whatever the underlying fund holds — from money-market to global equity.",
+        "liq": "Locked until 55, and at least five years of holding. Breaking the rules means repaying the relief.",
+        "tax": "Deductible up to 30% of income, capped at ฿500,000, inside the shared retirement ceiling."
+      },
+      "esg": {
+        "name": "Thai ESG fund",
+        "what": "A fund investing in Thai companies meeting sustainability criteria, created to encourage long-term domestic investment.",
+        "risk": "Concentrated in the Thai market, so it rises and falls with one country's economy.",
+        "liq": "Five-year holding period.",
+        "tax": "Deductible up to 30% of income, capped at ฿300,000 — and this one stacks separately from the ฿500,000 retirement ceiling. The enhanced cap ends 31 December 2026 unless extended."
+      },
+      "fund": {
+        "name": "Index and mutual funds",
+        "what": "A single purchase that spreads your money across many companies at once. The usual starting point for someone who does not want to pick individual shares.",
+        "risk": "Varies with what it tracks, but far less concentrated than owning a handful of shares.",
+        "liq": "Generally sell any business day; the money settles in a few days.",
+        "tax": "Gains on redeeming units are exempt from personal income tax. Distributions are treated differently — check the fund's documents."
+      },
+      "stock": {
+        "name": "Thai listed shares (SET)",
+        "what": "Direct part-ownership of individual companies traded on the Thai exchange.",
+        "risk": "High and concentrated. One company can fall a long way on its own news.",
+        "liq": "Sell on any trading day.",
+        "tax": "Capital gains on listed shares sold on the exchange are exempt from personal income tax. Dividends carry 10% withholding tax, with an option to include them in your return and claim a credit."
+      },
+      "bond": {
+        "name": "Bonds",
+        "what": "Lending money to the government or a company for a fixed period at a fixed rate. You are a lender, not an owner.",
+        "risk": "Lower than shares. Government bonds are the safer end; company bonds pay more because they can default.",
+        "liq": "Government bonds can usually be sold; some retail bonds are meant to be held to maturity.",
+        "tax": "Interest is subject to 15% withholding tax, the same as deposit interest."
+      },
+      "gold": {
+        "name": "Gold",
+        "what": "A store of value people turn to when they distrust everything else. It produces no income at all — no interest, no dividends.",
+        "risk": "Prices swing widely and can go nowhere for years at a stretch.",
+        "liq": "Physical gold sells readily in Thailand; gold funds trade like funds.",
+        "tax": "Treatment depends on the form you hold it in — physical, fund, or futures are not the same. Check before you assume."
+      }
+    }
+  },
+  "begin": {
+    "kicker": "Chapter eight",
+    "title": "Begin.",
+    "lede": "You now know more about this than most people ever will. Here is what this site is, where every number came from, and what to do next.",
+    "sources": "Every number's source",
+    "stamp": "verified {v} · review due {r}",
+    "again": "Change your assumptions and climb again",
+    "privacy2": "This page has no accounts, no analytics, no cookies, and no server. Your numbers never left your browser — close the tab and they are gone. Only your language choice is remembered, on your own device.",
+    "nextTitle": "What to actually do next",
+    "next": "Find out how many SSO contribution months you have. Check whether your employer offers a provident fund and whether you are taking the full match. Work out your marginal rate from chapter four, and only then decide whether a deduction is worth it to you. If any of it is a large decision, take it to a licensed advisor — this site is a map, not a guide who knows your terrain."
+  }
+}

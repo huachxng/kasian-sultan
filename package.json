@@ -1,0 +1,6 @@
+{
+  "name": "kasian-sultan",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test 'site/tests/**/*.test.js'" }
+}
