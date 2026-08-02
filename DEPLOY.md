@@ -74,7 +74,7 @@ HTTPS is free and automatic on both.
 
 ## Editing the Thai text without touching code
 
-**https://kasian-sultan.pages.dev/edit.html**
+**https://kasian-sultan.pages.dev/edit**
 
 Every Thai sentence on the site, shown next to its English original in a plain text
 box. Search for the phrase you want, fix it, press **Download th.json**, then replace
