@@ -11,5 +11,53 @@
   "disclaimer": {
     "title": "What this site is — and is not",
     "full": "Kasian Sultan is a free educational project. It is not investment, tax, or legal advice, and no part of it is a recommendation to buy or sell any fund, security, or product. It is not operated by a licensed securities professional, financial advisor, or tax preparer, and is not affiliated with any financial institution or government agency. The calculators are illustrations driven entirely by assumptions you choose; projections are mathematical scenarios, not predictions or guarantees — real markets rise, fall, and misbehave, and past or assumed returns do not determine future results. Tax rules shown are for tax year 2026 (B.E. 2569), verified against the sources listed below on the date shown, and change often — confirm current rules with the Revenue Department (rd.go.th) before acting. Before making investment, tax, or retirement decisions, consult a licensed professional: an SEC-licensed investment advisor for investments, or a qualified tax advisor for your filing. Nothing you enter here is collected, stored, or transmitted — all calculations run and remain in your browser (your language choice is saved on your own device only)."
+  },
+  "hero": {
+    "title": "Kasian Sultan",
+    "sub": "A free guide to retiring in Thailand — the maths, the tax, the dates that matter.",
+    "privacy": "Nothing you type leaves this page",
+    "scroll": "Scroll"
+  },
+  "time": {
+    "kicker": "Chapter one",
+    "title": "Time is the asset.",
+    "lede": "Not your salary. Not your stock picks. The years you leave money alone are the part nobody can buy back later.",
+    "ageLabel": "Your age",
+    "yearsLeft": "years until 65",
+    "doublings": "times money invested today could double by 65 at 6% — the rule of 72, an illustration, not a promise",
+    "note": "The rule of 72: divide 72 by your return to estimate the years each doubling takes. At 6% that is roughly 12 years. It is a mental shortcut, not a forecast — real returns arrive unevenly, and some years are negative."
+  },
+  "number": {
+    "kicker": "Chapter two",
+    "title": "Your number.",
+    "lede": "Retirement is not an age. It is a pile of money large enough that what it produces covers what you spend.",
+    "essential": "Essential spending / month",
+    "discretionary": "Discretionary / month",
+    "guaranteed": "Guaranteed income / month",
+    "guaranteedNote": "SSO pension, rent you collect, a company pension — income that arrives whether or not your portfolio behaves.",
+    "target": "Portfolio that could fund the rest",
+    "range": "at a {low}–{high} starting withdrawal rate (research as of {date}) — assumptions, not magic",
+    "multiples": "That is {lowX}× to {highX}× your portfolio-funded yearly spending.",
+    "essNote": "Essentials are the floor that must be funded no matter what happens. Discretionary spending is where flexibility lives — people who can cut back in bad years can safely start at a higher rate than people who cannot."
+  },
+  "climb": {
+    "kicker": "Chapter three",
+    "title": "The climb.",
+    "monthly": "You invest / month",
+    "retire": "Retire at",
+    "scenario": "Scenario",
+    "bear": "Bear",
+    "base": "Base",
+    "bull": "Bull",
+    "putIn": "you put in",
+    "growth": "growth added",
+    "total": "projected total",
+    "band": "The shaded band is the middle 90% of 1,000 simulated futures — a range, not a promise. All figures are in today's baht, so you can read them with today's prices in mind.",
+    "seqTitle": "Order matters more than average",
+    "seq": "Take ten years of returns averaging exactly 5%, a ฿1,000,000 portfolio, and ฿50,000 withdrawn each year. Nothing changes except the order the returns arrive in:",
+    "seqBest": "good years first",
+    "seqFlat": "a flat 5% every year",
+    "seqWorst": "bad years first",
+    "seqNote": "Same returns. Same average. A 46% gap in what you are left with. This is sequence-of-returns risk, and it is why a single average return figure flatters a plan."
   }
 }
