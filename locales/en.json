@@ -1,0 +1,14 @@
+{
+  "chrome": {
+    "wordmark": "KASIAN SULTAN",
+    "tagline": "Retire like a sultan",
+    "footerDisclaimer": "Educational only — not financial advice.",
+    "langToggle": "ไทย",
+    "chapterIndex": "Chapters",
+    "stale": "These figures were last verified {date}. Tax rules change — confirm at rd.go.th."
+  },
+  "disclaimer": {
+    "title": "What this site is — and is not",
+    "full": "Kasian Sultan is a free educational project. It is not investment, tax, or legal advice, and no part of it is a recommendation to buy or sell any fund, security, or product. It is not operated by a licensed securities professional, financial advisor, or tax preparer, and is not affiliated with any financial institution or government agency. The calculators are illustrations driven entirely by assumptions you choose; projections are mathematical scenarios, not predictions or guarantees — real markets rise, fall, and misbehave, and past or assumed returns do not determine future results. Tax rules shown are for tax year 2026 (B.E. 2569), verified against the sources listed below on the date shown, and change often — confirm current rules with the Revenue Department (rd.go.th) before acting. Before making investment, tax, or retirement decisions, consult a licensed professional: an SEC-licensed investment advisor for investments, or a qualified tax advisor for your filing. Nothing you enter here is collected, stored, or transmitted — all calculations run and remain in your browser (your language choice is saved on your own device only)."
+  }
+}
