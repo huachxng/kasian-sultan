@@ -34,6 +34,11 @@ async function boot() {
     try { (await import(`./chapters/${mod}.js`)).init?.(); }
     catch (err) { console.warn(`chapter ${mod} not available`, err); }
   }
+
+  // Deep link: chapters are shareable URLs. Chapter content is injected after
+  // boot, so the browser's own hash restore fires too early — redo it here.
+  const target = location.hash && document.querySelector(location.hash);
+  if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant' }));
 }
 
 boot();
