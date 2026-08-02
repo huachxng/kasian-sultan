@@ -5,7 +5,8 @@
     "footerDisclaimer": "Educational only — not financial advice.",
     "langToggle": "ไทย",
     "chapterIndex": "Chapters",
-    "stale": "These figures were last verified {date}. Tax rules change — confirm at rd.go.th."
+    "stale": "These figures were last verified {date}. Tax rules change — confirm at rd.go.th.",
+    "nojs": "This chapter's calculator needs JavaScript. Everything written here still reads without it."
   },
   "disclaimer": {
     "title": "What this site is — and is not",
