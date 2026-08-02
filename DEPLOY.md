@@ -9,21 +9,57 @@ Run it locally:
 python3 -m http.server 4173 --directory site
 ```
 
-## Option A — GitHub Pages (free)
+## Option A — GitHub Pages (LIVE)
 
-1. Create a repository on GitHub and push this project.
-2. Repo → **Settings → Pages**.
-3. Source: **Deploy from a branch**. Branch: `main`, folder: **`/site`**.
-4. Save. The URL appears within a minute or two.
+**https://huachxng.github.io/kasian-sultan/**
+
+Repo: https://github.com/huachxng/kasian-sultan
+
+GitHub Pages only publishes from a repository's root or its `/docs` folder — it
+cannot publish from `/site`. So `main` keeps the tidy layout and the **contents of
+`site/` are pushed to a `gh-pages` branch**, whose root Pages serves.
+
+### Publishing an update
+
+Commit your change to `main` as usual, then:
+
+```bash
+git subtree push --prefix site origin gh-pages
+```
+
+That is the whole deploy. Pages rebuilds in a minute or so. If that command is ever
+rejected because the branches diverged, force a clean replacement:
+
+```bash
+git push origin `git subtree split --prefix site main`:gh-pages --force
+```
 
 GitHub Pages' terms allow static, non-commercial sites like this one. There is no
 server-side code and no user accounts, so nothing here needs more than static hosting.
 
-## Option B — Cloudflare Pages (free)
+## Option B — Cloudflare Pages (optional, better latency in Thailand)
 
-1. Sign in at dash.cloudflare.com → **Workers & Pages → Create → Pages**.
-2. Choose **Upload assets** and drop the `site/` folder in (or connect the repo).
-3. Build command: leave empty. Output directory: `site`.
+Not required — GitHub Pages above already serves the site. The reason to add
+Cloudflare is that its edge network is considerably closer to Bangkok than
+GitHub's, so the site loads faster for a Thai audience.
+
+Connecting the repo is the least work and keeps deploys automatic:
+
+1. Sign in at dash.cloudflare.com → **Workers & Pages → Create → Pages →
+   Connect to Git**.
+2. Authorise GitHub, pick **`kasian-sultan`**.
+3. Settings — this is the part that matters:
+   - Production branch: **`main`**
+   - Framework preset: **None**
+   - Build command: **leave empty**
+   - Build output directory: **`site`**
+4. Save and Deploy.
+
+Unlike GitHub Pages, Cloudflare *can* publish from a subfolder, so it builds
+straight off `main` and the `gh-pages` branch is irrelevant to it.
+
+If you would rather not connect Git, choose **Upload assets** instead and drop in
+the contents of `site/` — but then every update is a manual re-upload.
 
 ## Adding a domain later (~$11/year)
 
