@@ -51,6 +51,29 @@ test('palette discipline: no stray hex colours outside the token block', () => {
   assert.deepEqual(stray, [], `unexpected colours: ${stray.join(', ')}`);
 });
 
+test('attribution and terms survive in both locales', () => {
+  const REQUIRED = ['ownerName', 'schoolName', 'made', 'noCommercial', 'eduPurpose', 'noData'];
+  for (const loc of ['en', 'th']) {
+    const d = JSON.parse(readFileSync(join(SITE, `locales/${loc}.json`), 'utf8'));
+    assert.ok(d.credits, `${loc}.json is missing the credits block`);
+    for (const k of REQUIRED) {
+      assert.ok(d.credits[k]?.trim(), `${loc}.json credits.${k} is empty — attribution must not be dropped`);
+    }
+  }
+  // the author's name and school are proper nouns: identical in both locales
+  const en = JSON.parse(readFileSync(join(SITE, 'locales/en.json'), 'utf8'));
+  const th = JSON.parse(readFileSync(join(SITE, 'locales/th.json'), 'utf8'));
+  assert.equal(en.credits.ownerName, th.credits.ownerName);
+  assert.equal(en.credits.schoolName, th.credits.schoolName);
+});
+
+test('the begin chapter renders the colophon', () => {
+  const src = readFileSync(join(SITE, 'js/chapters/begin.js'), 'utf8');
+  for (const k of ['credits.ownerName', 'credits.noCommercial', 'credits.eduPurpose', 'credits.noData']) {
+    assert.ok(src.includes(k), `begin.js does not render ${k}`);
+  }
+});
+
 test('every chapter carries the disclaimer footer', () => {
   const html = readFileSync(join(SITE, 'index.html'), 'utf8');
   const chapters = (html.match(/<section class="chapter/g) || []).length;

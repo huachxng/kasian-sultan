@@ -72,6 +72,25 @@ not true everywhere), then point it at whichever host you picked:
 
 HTTPS is free and automatic on both.
 
+## Editing the Thai text without touching code
+
+**https://kasian-sultan.pages.dev/edit.html**
+
+Every Thai sentence on the site, shown next to its English original in a plain text
+box. Search for the phrase you want, fix it, press **Download th.json**, then replace
+`site/locales/th.json` in the repository with the downloaded file.
+
+The page is read-only against the live site — editing there changes nothing until the
+file is committed, so it is safe to experiment. It cannot produce broken JSON either:
+the file is rebuilt from the real structure rather than typed by hand.
+
+To replace the file without using a terminal: open
+https://github.com/huachxng/kasian-sultan/blob/main/site/locales/th.json → the pencil
+icon → select all → paste the new contents → **Commit changes**. Cloudflare redeploys
+by itself; for GitHub Pages, run the `git subtree push` line above.
+
+The page is `noindex`, so search engines will not list it.
+
 ## The one recurring job
 
 `site/config/**` carries `verified_on` and `review_by` dates. When today's date
