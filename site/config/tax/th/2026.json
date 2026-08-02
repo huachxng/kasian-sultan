@@ -1,0 +1,45 @@
+{
+  "tax_year": 2026,
+  "be_year": 2569,
+  "verified_on": "2026-08-01",
+  "review_by": "2027-01-31",
+  "sources": [
+    "https://www.rd.go.th/fileadmin/download/english_form/2024/GUIDE_91_67_Complete.pdf",
+    "https://taxsummaries.pwc.com/thailand/individual/taxes-on-personal-income",
+    "https://taxsummaries.pwc.com/thailand/individual/deductions",
+    "https://sherrings.com/personal-tax-deductions-allowances-thailand.html"
+  ],
+  "brackets": [
+    { "up_to_thb": 150000,  "rate_bp": 0 },
+    { "up_to_thb": 300000,  "rate_bp": 500 },
+    { "up_to_thb": 500000,  "rate_bp": 1000 },
+    { "up_to_thb": 750000,  "rate_bp": 1500 },
+    { "up_to_thb": 1000000, "rate_bp": 2000 },
+    { "up_to_thb": 2000000, "rate_bp": 2500 },
+    { "up_to_thb": 5000000, "rate_bp": 3000 },
+    { "up_to_thb": null,    "rate_bp": 3500 }
+  ],
+  "employment_expense": { "rate_bp": 5000, "cap_thb": 100000 },
+  "allowances": {
+    "personal_thb": 60000,
+    "spouse_thb": 60000,
+    "child_first_thb": 30000,
+    "child_later_born_from_year": 2018,
+    "child_later_thb": 60000,
+    "parent_care_thb": 30000,
+    "disabled_dependent_thb": 60000
+  },
+  "vehicles": {
+    "retirement_ceiling_thb": 500000,
+    "rmf":          { "income_cap_bp": 3000, "cap_thb": 500000, "in_retirement_ceiling": true },
+    "pvd":          { "income_cap_bp": 1500, "cap_thb": 500000, "in_retirement_ceiling": true },
+    "gpf":          { "income_cap_bp": 3000, "cap_thb": 500000, "in_retirement_ceiling": true },
+    "nsf":          { "income_cap_bp": null, "cap_thb": 30000,  "in_retirement_ceiling": true },
+    "pension_life": { "income_cap_bp": 1500, "cap_thb": 200000, "in_retirement_ceiling": true },
+    "thai_esg":     { "income_cap_bp": 3000, "cap_thb": 300000, "in_retirement_ceiling": false, "last_enhanced_year": 2026 },
+    "life_ins":     { "income_cap_bp": null, "cap_thb": 100000, "in_retirement_ceiling": false, "group": "insurance100k" },
+    "health_ins":   { "income_cap_bp": null, "cap_thb": 25000,  "in_retirement_ceiling": false, "group": "insurance100k" },
+    "insurance100k_group_cap_thb": 100000,
+    "parents_health": { "income_cap_bp": null, "cap_thb": 15000, "in_retirement_ceiling": false }
+  }
+}
