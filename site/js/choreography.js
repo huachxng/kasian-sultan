@@ -17,16 +17,32 @@ export function initChoreography() {
   chapters.forEach(c => io.observe(c));
 }
 
+const D = 700;
+let gen = 0;
+
 export function animateCount(el, to, { format = (v) => String(Math.round(v)) } = {}) {
-  if (reduced) { el.textContent = format(to); el.dataset.from = to; return; }
-  const from = Number(el.dataset.from ?? 0), t0 = performance.now(), D = 700;
+  const final = format(to);
+  const from = Number(el.dataset.from ?? 0);
+  el.dataset.from = to;
+
+  if (reduced) { el.textContent = final; return; }
+
+  const mine = ++gen;
+  el.dataset.gen = mine;
+  const t0 = performance.now();
   const tick = (t) => {
+    if (el.dataset.gen != mine) return;              // superseded by a newer value
     const k = Math.min(1, (t - t0) / D), e = 1 - (1 - k) ** 3;
-    el.textContent = format(from + (to - from) * e);
+    el.textContent = k < 1 ? format(from + (to - from) * e) : final;
     if (k < 1) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
-  el.dataset.from = to;
+
+  // rAF is frozen in background/hidden tabs. Never leave a stale placeholder
+  // on screen — if the animation did not land, write the real number.
+  setTimeout(() => {
+    if (el.dataset.gen == mine && el.textContent !== final) el.textContent = final;
+  }, D + 250);
 }
 
 export function seedParticles(host, count = 26) {
