@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Thai text editor — Kasian Sultan</title>
+<link rel="stylesheet" href="./fonts/inter.css">
+<link rel="stylesheet" href="./fonts/plexthai.css">
+<style>
+:root {
+  --ink: #0B0B0C; --paper: #F6F4EF; --gold: #C6A15B; --gold-hi: #E9CD8F;
+  --line: rgba(246,244,239,.14); --muted: rgba(246,244,239,.55);
+  --font-ui: "Inter", system-ui, sans-serif;
+  --font-th: "IBM Plex Sans Thai Looped", "Thonburi", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  font-family: var(--font-ui); background: var(--ink); color: var(--paper);
+  padding: 1.5rem clamp(1rem,4vw,3rem) 7rem; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--gold); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+a { color: var(--gold); }
+
+h1 { font-size: 1.4rem; font-weight: 600; letter-spacing: -.01em; }
+.micro { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+header { border-bottom: 1px solid var(--line); padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
+.lede { color: var(--muted); font-size: .9rem; max-width: 62ch; margin-top: .6rem; }
+.lede strong { color: var(--paper); font-weight: 500; }
+
+.toolbar {
+  position: sticky; top: 0; z-index: 5; background: var(--ink);
+  padding: .9rem 0; border-bottom: 1px solid var(--line);
+  display: flex; gap: .6rem; flex-wrap: wrap; align-items: center;
+}
+input[type="search"] {
+  flex: 1 1 14rem; min-width: 0; background: transparent; color: var(--paper);
+  border: 1px solid var(--line); border-radius: 2px; padding: .55rem .8rem;
+  font: inherit; font-size: .85rem;
+}
+button {
+  all: unset; cursor: pointer; border: 1px solid var(--gold); color: var(--gold);
+  padding: .55rem 1rem; border-radius: 2px; font-size: .68rem;
+  letter-spacing: .16em; text-transform: uppercase; white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+button:hover { background: var(--gold); color: var(--ink); }
+button[disabled] { opacity: .35; cursor: not-allowed; }
+button.ghost { border-color: var(--line); color: var(--muted); }
+button.ghost:hover { background: transparent; color: var(--paper); border-color: var(--paper); }
+
+.count { font-size: .75rem; color: var(--muted); margin-left: auto; }
+.count b { color: var(--gold); font-variant-numeric: tabular-nums; }
+
+.row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--line); align-items: start;
+}
+@media (max-width: 720px) { .row { grid-template-columns: 1fr; gap: .5rem; } }
+.row.changed { background: rgba(198,161,91,.07); }
+.row.changed .key::after {
+  content: "edited"; margin-left: .5rem; color: var(--gold);
+  font-size: .6rem; letter-spacing: .14em; border: 1px solid var(--gold);
+  padding: .05rem .35rem; border-radius: 2px;
+}
+.key { font-size: .62rem; letter-spacing: .12em; color: var(--muted); margin-bottom: .35rem; word-break: break-all; }
+.en { font-size: .85rem; color: var(--muted); white-space: pre-wrap; }
+textarea {
+  width: 100%; background: transparent; color: var(--paper);
+  border: 1px solid var(--line); border-radius: 2px; padding: .6rem .7rem;
+  font-family: var(--font-th); font-size: .95rem; line-height: 1.55;
+  resize: vertical; min-height: 3rem;
+}
+textarea:focus { border-color: var(--gold); }
+
+.done { position: fixed; inset: auto 0 0 0; background: var(--gold); color: var(--ink);
+  padding: .8rem 1rem; text-align: center; font-size: .8rem; display: none; }
+.done.show { display: block; }
+.done code { background: rgba(11,11,12,.15); padding: .1rem .35rem; border-radius: 2px; }
+#status { padding: 2rem 0; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="micro">Kasian Sultan — authoring tool</p>
+  <h1>Thai text editor</h1>
+  <p class="lede">
+    Every Thai sentence on the site, next to its English original. Edit any box, then press
+    <strong>Download th.json</strong> and replace <code>site/locales/th.json</code> in the repository.
+    <strong>Nothing here changes the live site by itself</strong> — you are editing a copy in your own browser,
+    and no one else can see your edits until the file is committed.
+  </p>
+</header>
+
+<div class="toolbar">
+  <input type="search" id="q" placeholder="Search Thai or English text…" aria-label="Search">
+  <button id="onlyChanged" class="ghost" type="button">Show edited only</button>
+  <button id="reset" class="ghost" type="button">Undo all</button>
+  <button id="dl" type="button" disabled>Download th.json</button>
+  <span class="count"><b id="n">0</b> edited</span>
+</div>
+
+<div id="status">Loading…</div>
+<main id="rows"></main>
+
+<div class="done" id="done">
+  Downloaded. Now replace <code>site/locales/th.json</code> in the repo with this file, commit, and the site updates.
+</div>
+
+<script type="module">
+const flatten = (o, p = '') => Object.entries(o).flatMap(([k, v]) =>
+  v && typeof v === 'object' ? flatten(v, `${p}${k}.`) : [[`${p}${k}`, v]]);
+
+const setDeep = (o, path, val) => {
+  const parts = path.split('.');
+  let cur = o;
+  for (const k of parts.slice(0, -1)) cur = cur[k];
+  cur[parts.at(-1)] = val;
+};
+
+let en, th, original, edits = new Map(), onlyChanged = false;
+
+const $ = (s) => document.querySelector(s);
+
+try {
+  [en, th] = await Promise.all(['en', 'th'].map(l =>
+    fetch(`./locales/${l}.json`, { cache: 'no-store' }).then(r => r.json())));
+} catch (err) {
+  $('#status').textContent = 'Could not load the locale files. Open this page from the site URL, not from a downloaded copy.';
+  throw err;
+}
+
+original = JSON.parse(JSON.stringify(th));
+const enFlat = Object.fromEntries(flatten(en));
+const rows = flatten(th);
+
+$('#status').remove();
+
+$('#rows').innerHTML = rows.map(([key, val]) => `
+  <div class="row" data-key="${key}">
+    <div>
+      <p class="key">${key}</p>
+      <p class="en">${enFlat[key] ?? '—'}</p>
+    </div>
+    <textarea data-key="${key}" rows="2" aria-label="Thai text for ${key}">${val}</textarea>
+  </div>`).join('');
+
+const autosize = (t) => { t.style.height = 'auto'; t.style.height = t.scrollHeight + 'px'; };
+document.querySelectorAll('textarea').forEach(autosize);
+
+$('#rows').addEventListener('input', (e) => {
+  const t = e.target;
+  if (t.tagName !== 'TEXTAREA') return;
+  autosize(t);
+  const key = t.dataset.key;
+  const orig = flatten(original).find(([k]) => k === key)[1];
+  if (t.value === orig) edits.delete(key); else edits.set(key, t.value);
+  t.closest('.row').classList.toggle('changed', edits.has(key));
+  refresh();
+});
+
+function refresh() {
+  $('#n').textContent = edits.size;
+  $('#dl').disabled = edits.size === 0;
+  filter();
+}
+
+function filter() {
+  const q = $('#q').value.trim().toLowerCase();
+  document.querySelectorAll('.row').forEach(row => {
+    const key = row.dataset.key;
+    const hay = (key + ' ' + row.querySelector('.en').textContent + ' ' +
+      row.querySelector('textarea').value).toLowerCase();
+    const matchQ = !q || hay.includes(q);
+    const matchC = !onlyChanged || edits.has(key);
+    row.hidden = !(matchQ && matchC);
+  });
+}
+
+$('#q').addEventListener('input', filter);
+
+$('#onlyChanged').addEventListener('click', () => {
+  onlyChanged = !onlyChanged;
+  $('#onlyChanged').textContent = onlyChanged ? 'Show all' : 'Show edited only';
+  filter();
+});
+
+$('#reset').addEventListener('click', () => {
+  if (edits.size && !confirm('Undo every edit on this page?')) return;
+  edits.clear();
+  const flat = Object.fromEntries(flatten(original));
+  document.querySelectorAll('textarea').forEach(t => {
+    t.value = flat[t.dataset.key];
+    autosize(t);
+    t.closest('.row').classList.remove('changed');
+  });
+  refresh();
+});
+
+$('#dl').addEventListener('click', () => {
+  const out = JSON.parse(JSON.stringify(original));
+  for (const [key, val] of edits) setDeep(out, key, val);
+  const blob = new Blob([JSON.stringify(out, null, 2) + '\n'], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'th.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  $('#done').classList.add('show');
+});
+
+refresh();
+</script>
+</body>
+</html>

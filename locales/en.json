@@ -219,5 +219,17 @@
     "privacy2": "This page has no accounts, no analytics, no cookies, and no server. Your numbers never left your browser — close the tab and they are gone. Only your language choice is remembered, on your own device.",
     "nextTitle": "What to actually do next",
     "next": "Find out how many SSO contribution months you have. Check whether your employer offers a provident fund and whether you are taking the full match. Work out your marginal rate from chapter four, and only then decide whether a deduction is worth it to you. If any of it is a large decision, take it to a licensed advisor — this site is a map, not a guide who knows your terrain."
+  },
+  "credits": {
+    "title": "Credits",
+    "ownerLabel": "Owner",
+    "ownerName": "Sasipat Tejahempinyo (Huacheng)",
+    "schoolLabel": "High School",
+    "schoolName": "BASIS International School Bangkok",
+    "madeLabel": "Made by",
+    "made": "Idea, Research, and Web Design with Help from Claude Artificial Agent",
+    "noCommercial": "DO NOT COPY AND DO NOT REPLICATE THIS FOR ANY COMMERCIAL USE.",
+    "eduPurpose": "THIS PROJECT IS FOR EDUCATIONAL PURPOSE — AUTO-CALCULATION MAY MAKE MISTAKES. CONSULT A CERTIFIED FINANCIAL ADVISOR.",
+    "noData": "NO DATA FROM USER COLLECTED."
   }
 }

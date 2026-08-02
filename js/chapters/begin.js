@@ -40,7 +40,25 @@ function render(host, cfgs) {
 
     <hr class="hairline">
     <p class="note" data-i18n="begin.privacy2"></p>
-    <a class="btn" href="#ch-01" data-i18n="begin.again"></a>`;
+    <a class="btn" href="#ch-01" data-i18n="begin.again"></a>
+
+    <hr class="hairline">
+    <section class="colophon">
+      <p class="microlabel" data-i18n="credits.title"></p>
+      <dl class="colophon__who">
+        <dt class="microlabel" data-i18n="credits.ownerLabel"></dt>
+        <dd class="colophon__name" data-i18n="credits.ownerName"></dd>
+        <dt class="microlabel" data-i18n="credits.schoolLabel"></dt>
+        <dd data-i18n="credits.schoolName"></dd>
+        <dt class="microlabel" data-i18n="credits.madeLabel"></dt>
+        <dd data-i18n="credits.made"></dd>
+      </dl>
+      <ul class="colophon__terms">
+        <li data-i18n="credits.noCommercial"></li>
+        <li data-i18n="credits.eduPurpose"></li>
+        <li data-i18n="credits.noData"></li>
+      </ul>
+    </section>`;
 
   host.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
 }
