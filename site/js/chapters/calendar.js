@@ -1,7 +1,7 @@
 import { session } from '../session.js';
 import { personalMilestones } from '../engine/milestones.js';
 import { buildICS } from '../ics.js';
-import { t, getLocale, yearLabel } from '../i18n.js';
+import { t, getLocale, yearLabel, applyI18n } from '../i18n.js';
 
 let cal, blobUrl = null;
 
@@ -37,7 +37,11 @@ function build(host) {
   render();
 }
 
-function render() { renderStatutory(); renderPersonal(); }
+function render() {
+  applyI18n(document.getElementById('ch06-timeline'));
+  renderStatutory();
+  renderPersonal();
+}
 
 function renderStatutory() {
   const loc = getLocale();

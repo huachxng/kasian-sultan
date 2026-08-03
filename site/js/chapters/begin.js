@@ -1,4 +1,4 @@
-import { t } from '../i18n.js';
+import { t, applyI18n } from '../i18n.js';
 
 const CONFIGS = [
   ['./config/tax/th/2026.json', 'Thai tax rules'],
@@ -60,5 +60,5 @@ function render(host, cfgs) {
       </ul>
     </section>`;
 
-  host.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  applyI18n(host);
 }

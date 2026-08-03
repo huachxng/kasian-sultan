@@ -1,4 +1,4 @@
-import { t } from '../i18n.js';
+import { t, applyI18n } from '../i18n.js';
 
 // Risk is a coarse 1–5 teaching signal, not a rating. Order runs roughly
 // safest → most volatile so the gallery itself reads as a spectrum.
@@ -51,6 +51,5 @@ function render(host) {
     <p class="microlabel" style="margin-top:1.5rem" data-i18n="instruments.foreignTitle"></p>
     <p class="note" data-i18n="instruments.foreign"></p>`;
 
-  // stamp the [data-i18n] nodes this render just created
-  host.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  applyI18n(host);
 }

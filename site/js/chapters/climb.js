@@ -4,7 +4,7 @@ import { runMC } from '../engine/montecarlo.js';
 import { satang, fmtTHB } from '../engine/money.js';
 import { renderAreaChart } from '../svgchart.js';
 import { animateCount } from '../choreography.js';
-import { t } from '../i18n.js';
+import { t, applyI18n } from '../i18n.js';
 
 let app, worker = null, timer = null;
 
@@ -64,6 +64,7 @@ function build(host) {
 
   document.addEventListener('session:change', render);
   document.addEventListener('i18n:change', render);
+  applyI18n(host);
   render();
 }
 
