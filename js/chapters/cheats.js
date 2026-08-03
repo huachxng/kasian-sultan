@@ -3,7 +3,7 @@ import { computeTax } from '../engine/tax_th.js';
 import { applyVehicleCaps } from '../engine/deductions.js';
 import { satang, fmtTHB } from '../engine/money.js';
 import { animateCount } from '../choreography.js';
-import { t } from '../i18n.js';
+import { t, applyI18n } from '../i18n.js';
 
 let taxCfg;
 const inputs = { rmf: 0, thaiEsg: 0, pvd: 0, pensionLife: 0, lifeIns: 0, healthIns: 0, parentsHealth: 0 };
@@ -71,6 +71,7 @@ function build(host) {
 
   document.addEventListener('session:change', render);
   document.addEventListener('i18n:change', render);
+  applyI18n(host);
   render();
 }
 

@@ -1,6 +1,6 @@
 import { session, update } from '../session.js';
 import { animateCount } from '../choreography.js';
-import { t } from '../i18n.js';
+import { t, applyI18n } from '../i18n.js';
 
 export function init() {
   const host = document.getElementById('ch01-dial');
@@ -37,5 +37,6 @@ export function init() {
     (e) => update({ age: +e.target.value }));
   document.addEventListener('session:change', render);
   document.addEventListener('i18n:change', render);
+  applyI18n(host);
   render();
 }

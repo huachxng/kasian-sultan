@@ -1,4 +1,4 @@
-import { initI18n, setLocale, getLocale, t } from './i18n.js';
+import { initI18n, setLocale, getLocale, t, applyI18n } from './i18n.js';
 import { initChoreography, seedParticles } from './choreography.js';
 import { isStale } from './staleness.js';
 
@@ -34,6 +34,10 @@ async function boot() {
     try { (await import(`./chapters/${mod}.js`)).init?.(); }
     catch (err) { console.warn(`chapter ${mod} not available`, err); }
   }
+
+  // Safety net: every chapter stamps its own text, but a chapter that fails to
+  // load must not leave neighbouring markup blank.
+  applyI18n();
 
   // Deep link: chapters are shareable URLs. Chapter content is injected after
   // boot, so the browser's own hash restore fires too early — redo it here.

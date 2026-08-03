@@ -26,15 +26,23 @@ export function t(key, params = {}) {
 
 export function getLocale() { return active; }
 
-export function setLocale(l) {
-  active = l;
-  localStorage.setItem('ks-locale', l);
-  document.documentElement.lang = l;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+// Fill in every [data-i18n] node under `root`. Chapters build their markup after
+// the initial page-wide pass, and rebuild it again on locale change, so each one
+// calls this on its own container once its DOM exists — otherwise those labels
+// stay blank until something else happens to re-stamp them.
+export function applyI18n(root = document) {
+  root.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const attr = el.getAttribute('data-i18n-attr');
     if (attr) el.setAttribute(attr, t(key)); else el.textContent = t(key);
   });
+}
+
+export function setLocale(l) {
+  active = l;
+  localStorage.setItem('ks-locale', l);
+  document.documentElement.lang = l;
+  applyI18n();
   document.dispatchEvent(new CustomEvent('i18n:change', { detail: { locale: l } }));
 }
 

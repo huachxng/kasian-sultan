@@ -2,7 +2,7 @@ import { session, update } from '../session.js';
 import { targetRange } from '../engine/withdrawal.js';
 import { satang, fmtTHB, fmtPct } from '../engine/money.js';
 import { animateCount } from '../choreography.js';
-import { t } from '../i18n.js';
+import { t, applyI18n } from '../i18n.js';
 
 let app;
 
@@ -40,6 +40,7 @@ function build(host) {
   }
   document.addEventListener('session:change', render);
   document.addEventListener('i18n:change', render);
+  applyI18n(host);
   render();
 }
 

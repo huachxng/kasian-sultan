@@ -106,6 +106,15 @@ body {
 }
 .hero-title { font-size: var(--step-hero); font-weight: 300; }
 
+/* Copy is authored in the locale files, where a writer may use blank lines to
+   break a long passage into paragraphs. Text is injected with textContent (never
+   innerHTML, so translations can never inject markup) — pre-line is what makes
+   those authored line breaks render while still collapsing incidental spaces. */
+.lede, .note, .microlabel, .display, .tl-note,
+.card dd, .colophon__terms li, .colophon__who dd {
+  white-space: pre-line;
+}
+
 .microlabel {
   font-size: .72rem;
   letter-spacing: .18em;

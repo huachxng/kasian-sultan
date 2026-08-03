@@ -2,7 +2,7 @@ import { session, update } from '../session.js';
 import { computeTax } from '../engine/tax_th.js';
 import { satang, fmtTHB, fmtPct } from '../engine/money.js';
 import { animateCount } from '../choreography.js';
-import { t, getLocale, yearLabel } from '../i18n.js';
+import { t, getLocale, yearLabel, applyI18n } from '../i18n.js';
 
 let taxCfg, app, mode = 'th';
 
@@ -56,6 +56,7 @@ function build(host) {
 
   document.addEventListener('session:change', render);
   document.addEventListener('i18n:change', render);
+  applyI18n(host);
   render();
 }
 
